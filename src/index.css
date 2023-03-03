@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;1,100&family=Poppins:wght@100;300;500&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@font-face {
+  font-family: Ahsing;
+  src: url('./assets/fonts/Ahsing-Regular.otf');
+}
+
+@font-face {
+  font-family: IdealSans;
+  src: url('./assets/fonts/IdealSans-Medium-Pro.otf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: IdealSans;
+  src: url('./assets/fonts/IdealSans-Bold-Pro.otf');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: IdealSans;
+  src: url('./assets/fonts/IdealSans-Light-Pro.otf');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Aicho;
+  src: url('./assets/fonts/Aicho.otf');
+  font-weight: 300;
+  font-style: normal;
+}
+
+body {
+  font-family: 'IdealSans', sans-serif;
+  font-weight: 300;
+  margin: 0;
+
+  color: rgba(220, 234, 216);
+  /* background: linear-gradient(173.01deg, #FCEEE3 1.04%, #FFFEFC 1.05%, #FCE4DF 121.8%); */
+  /* background: #fbf7f5;  */
+  /* background: rgba(138, 154, 91, 0.5);  */
+
+  background: linear-gradient(173.01deg, #635985 1.04%, #18122B 1.05%);
+  /* background: #635985; */
+
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gm-style-cc { display:none; }
