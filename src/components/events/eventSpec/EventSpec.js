@@ -98,7 +98,7 @@ const EventSpec = () => {
         (
             <Container key="event-spec" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }}>
                 {/* { specs.listAvailable && <ToggleFriendList onClick={() => setShowModal(true)}/> } */}
-                <Scroll>
+                <Scroll className="no-scroll">
                 <Wrapper>
                     <Image img={`${process.env.REACT_APP_S3_URL}/${specs?.backgroundArtImage?.key}`} />
                     <DescriptionWrapper>
