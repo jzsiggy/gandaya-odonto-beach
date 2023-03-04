@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 import stars from '../../../assets/images/stars.jpg'
-import grapefruit from '../../../assets/images/grapefruit.png'
+import empty from '../../../assets/images/no-tickets.png'
 
 const Container = styled(motion.div)`
     width: 100%;
@@ -170,10 +170,10 @@ const SellerImage = styled.div`
 
 const ErrorIcon = styled.div`
     height: 150px;
-    width: 180px;
+    width: 150px;
     opacity: 1;
 
-    background-image: url(${grapefruit});
+    background-image: url(${empty});
     background-size: cover;
     background-position: center;
     text-decoration: none;
