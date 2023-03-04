@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-import stars from '../../../assets/images/stars.jpg'
+import stars from '../../../assets/images/galaxy.jpg'
 
 const ListContainer = styled.div`
     width: 100%;
