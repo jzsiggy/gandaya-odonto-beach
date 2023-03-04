@@ -26,6 +26,8 @@ const Modal = styled(motion.div)`
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+
+    color: black;
 `
 
 const Title = styled.span`
