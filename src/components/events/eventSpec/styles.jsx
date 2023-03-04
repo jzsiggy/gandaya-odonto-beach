@@ -98,7 +98,7 @@ const Button = styled(Link)`
     height: 8%;
     margin: 10px 0;
     min-height: 50px;
-    width: 80%;
+    width: calc(100% - 20px);
     align-self: center;
     
     text-align: center;

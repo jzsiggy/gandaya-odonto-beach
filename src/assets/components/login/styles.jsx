@@ -13,7 +13,7 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
 
-    background-image: url(${stars});
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3)), url(${stars});
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -64,6 +64,8 @@ const Form = styled.div`
     width: 80%;
     min-width: 270px;
     max-width: 400px;
+
+    color: black;
 
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 1);

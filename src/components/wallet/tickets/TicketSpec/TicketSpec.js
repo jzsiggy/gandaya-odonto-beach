@@ -7,6 +7,7 @@ import OrderModal from "../../modal/OrderModal";
 import TransferModal from "../../modal/TransferModal";
 
 import Loader from '../../../../assets/components/loader/Loader';
+import QrCode from "../../../../assets/components/QrCode";
 
 import {
     TicketSpecContainer,
@@ -85,7 +86,8 @@ const TicketSpec = (props) => {
                     <span>{ticket.ticketSpec.description}</span>
                 </Informative>
                 <QRCodeContainer>
-                    <QRCode img={`${process.env.REACT_APP_QR_CODE_URL}/?size=200x200&data=${ticket.secret}`} />
+                    {/* <QRCode img={`${process.env.REACT_APP_QR_CODE_URL}/?size=200x200&data=${ticket.secret}`} /> */}
+                    <QrCode content={ticket.secret} />
                 </QRCodeContainer>
                 <Informative>
                     <span onClick={() => setTransferModal(true)}>Transferir</span>
