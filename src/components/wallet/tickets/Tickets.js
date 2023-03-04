@@ -30,7 +30,7 @@ const Tickets = ()=> {
 
     return (
         !user ? <Login /> :
-        <ListContainer>
+        <ListContainer className="no-scroll">
             { 
                 isLoading ? <Loader /> :
                 !isError && tickets && tickets?.length ?

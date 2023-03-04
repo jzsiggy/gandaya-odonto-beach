@@ -31,7 +31,7 @@ const Feed = () => {
     ]
     return (
         <Container initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }}>
-            <ListContainer>
+            <ListContainer className="no-scroll">
             { 
                 images.map(image => {
                     return (

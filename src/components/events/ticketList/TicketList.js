@@ -143,7 +143,7 @@ const TicketList = () => {
     }
 
     return (
-        <Container initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }}>
+        <Container className="no-scroll" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }}>
             {/* { showInfo && <InfoModal onClose={() => setShowInfo(false)} /> } */}
             {/* <InfoIcon onClick={() => setShowInfo(true)} ><BsInfoLg style={{fontSize: '1.2em'}} /></InfoIcon> */}
             <EventImage img={`${process.env.REACT_APP_S3_URL}/${event?.backgroundArtImage?.key}`} />
