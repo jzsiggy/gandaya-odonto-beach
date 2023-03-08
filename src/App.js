@@ -32,6 +32,8 @@ import Menu from './components/menu/Menu';
 import Feed from './components/feed/Feed';
 import CommunicationPreference from './assets/components/communicationPreference/CommunicationPreference';
 
+import Grant from './components/grant/Grant';
+
 const App = () => {
 	const location = useLocation();
 	const [loading, setLoading] = useState(true);
@@ -87,6 +89,9 @@ const App = () => {
 					<Route exact path="/wallet/jewels" element={<Wallet jewels={true}/>} />
 					<Route exact path="/wallet/tickets/:id" element={<TicketSpec />} />
 					<Route exact path="/user" element={<User />} />
+
+					<Route exact path="/grant/:code" element={<Grant />} />
+
 					<Route exact path="/redirect" element={<Redirect />} />
 					<Route path="payment-succeeded" element={<CardPaymentSuccess />} />
 					<Route path="feed" element={<Feed />} />

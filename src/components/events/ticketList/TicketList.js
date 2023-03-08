@@ -111,13 +111,13 @@ const TicketList = () => {
         .catch(err => err)
     }
 
-    const getPromoTickets = async () => {
+    const getPromoTickets = async (eventId) => {
         if (promo) {
-            return await client.get(`ticket/promo/${promo}`)
+            return await client.get(`ticket/event/${eventId}/promo/${promo}`)
             .then(res => {
                 return(res.data.ticketSpecs);
             })
-            .catch(err => err)
+            // .catch(err => err)
         } else return null
     }
 
@@ -131,7 +131,7 @@ const TicketList = () => {
 
     const { isLoading: isEventLoading, isError: isEventError, data: event, error: eventError } = useQuery(['event', alias], getEventByAlias, { keepPreviousData: false });
     const { isLoading: isTicketsLoading, isError: isTicketsError, data: tickets, error: ticketsError } = useQuery(['eventTickets', alias], () => getActiveTickets(event.id), {enabled: (!!showTickets) && (!!event), keepPreviousData: false});
-    const { isLoading: isPromoLoading, isError: isPromoError, data: promoTickets, error: promoError } = useQuery(['eventTicketsPromo', alias], () => getPromoTickets(), {enabled: (!!showTickets) && (!!event), keepPreviousData: false});
+    const { isLoading: isPromoLoading, isError: isPromoError, data: promoTickets, error: promoError } = useQuery(['eventTicketsPromo', alias], () => getPromoTickets(event.id), {enabled: (!!showTickets) && (!!event), keepPreviousData: false});    
     const { isLoading: isOrdersLoading, isError: isOrdersError, data: orders, error: ordersError } = useQuery(['eventOrders', alias], () => getEventOrders(event.id), {enabled: (!!showOrders) && (!!event), keepPreviousData: false});
 
     if (isEventLoading || (showTickets && isTicketsLoading) || (showOrders && isOrdersLoading)) {
