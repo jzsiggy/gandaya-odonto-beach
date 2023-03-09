@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
+import kiss from '../../../../assets/images/giphy-kiss.gif'
+import heart from '../../../../assets/images/fire-heart.gif'
+
 const Container = styled(motion.div)`
     top: 0;
     left: 0;
@@ -17,6 +20,7 @@ const Container = styled(motion.div)`
 
 const Modal = styled(motion.div)`
     width: 80%;
+    max-width: 400px;
     height: 50%;
     // border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 15px;
@@ -27,64 +31,40 @@ const Modal = styled(motion.div)`
     justify-content: space-evenly;
     align-items: center;
 
+    text-align: center;
+
     color: black;
 `
 
-const Title = styled.span`
-    font-size: 1.5em;
-    font-weight: 500;
+const Kiss = styled.div`
+    background: url(${kiss});
+    background-size: cover;
+    background-position: center;
+    text-decoration: none;
 
-    text-align: center;
+    height: 100px;
+    width: 150px;
 `
 
-const Description = styled.div`
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    font-size: 1.2em;
-`
+const Heart = styled.div`
+    background: url(${heart});
+    background-size: cover;
+    background-position: center;
+    text-decoration: none;
 
-const ButtonGroup = styled.div`
-    width: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-`
+    height: 150px;
+    width: 150px;
 
-const Button = styled.div`
-    width: 45%;
-    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    font-size: 1.5em;
-`
 
-const Input = styled.input`
-    width: 70%;
-    height: 30px;
-
-    text-align: center;
-
-    border: 0;
-    outline: 0;
-
-    border-bottom: 1.5px solid #6A4F4F;
-
-    font-family: rajdhani;
-    font-size: 1.3em;
-    font-weight: bold;
+    color: white;
 `
 
 export {
     Container,
     Modal,
-    Title,
-    Description,
-    ButtonGroup,
-    Button,
-    Input
+    Kiss,
+    Heart
 }
