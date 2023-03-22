@@ -64,12 +64,13 @@ const DonateModal = (props) => {
                 <Kiss />
             </> :
             state == "final" &&
-            <div style={{width: "80%", display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: "center"}}>
+            <div style={{width: "80%", height: "100%", display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', alignItems: "center"}}>
                 <h3>De acordo com o horóscopo da Odonto Beach, sua chance de dar match na festa é</h3>
                 <Heart>
                     <h1 style={{paddingTop: "15px"}}>{percent.toFixed(2).replace('.', ',')}%</h1>
                 </Heart>
-                <span>{percent < 20 ? "Quem disse que seria fácil?!" : "Caiu na rede é peixe!"}</span>
+                <span>{percent < 20 ? "Quem disse que seria fácil?!" : "Caiu na rede é peixe, ein!"}</span>
+                <div onClick={() => { props.onClose(); props.onClick(); }} style={{borderRadius: "5px", border: "1.5px solid #18122B", padding: "5px 20px", fontWeight: "bold"}}> Continuar </div>
             </div>
             }
             </Modal>

@@ -21,7 +21,7 @@ const Container = styled(motion.div)`
 const Modal = styled(motion.div)`
     width: 80%;
     max-width: 400px;
-    height: 50%;
+    height: 65%;
     // border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);

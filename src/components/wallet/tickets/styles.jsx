@@ -65,8 +65,8 @@ const Date = styled.span`
 
 
 const TicketSpecContainer = styled.div`
-    min-width: 80%;
-    margin: 0 10%;
+    min-width: 70%;
+    margin: 0 5%;
     height: 80%;
     display: flex;
     flex-direction: column;

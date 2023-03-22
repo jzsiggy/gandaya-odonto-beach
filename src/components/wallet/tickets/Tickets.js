@@ -31,6 +31,7 @@ const Tickets = ()=> {
     return (
         !user ? <Login /> :
         <ListContainer className="no-scroll">
+            { tickets && tickets?.length >= 1  && <div style={{paddingLeft: "10%"}} />}
             { 
                 isLoading ? <Loader /> :
                 !isError && tickets && tickets?.length ?
@@ -56,6 +57,7 @@ const Tickets = ()=> {
                     }} />
                 </div>
             }
+            { tickets && tickets?.length >= 1  && <div style={{paddingRight: "10%"}} />}
         </ListContainer>
     )
 }
