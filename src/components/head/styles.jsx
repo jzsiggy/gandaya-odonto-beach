@@ -78,10 +78,30 @@ const Menu = styled.div`
     }
 `
 
+const Support = styled.a`
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    font-size: 1.7em;
+    color: "rgba(220, 234, 216)";
+
+    transition: 0.1s ease all;
+
+    position: absolute;
+    right: 30px;
+
+    &:active {
+        transform: scale(1.1) rotate(3deg);
+    }
+`
+
 export {
     HeaderWrapper,
     Header,
     Logo,
     HeadItem,
-    Menu
+    Menu, Support
 };
