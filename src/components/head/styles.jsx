@@ -66,7 +66,7 @@ const Menu = styled.div`
     justify-content: space-evenly;
 
     font-size: 1.7em;
-    color: "rgba(220, 234, 216)";
+    color: rgba(220, 234, 216);
 
     transition: 0.1s ease all;
 
@@ -86,7 +86,7 @@ const Support = styled.a`
     justify-content: space-evenly;
 
     font-size: 1.7em;
-    color: "rgba(220, 234, 216)";
+    color: rgba(220, 234, 216);
 
     transition: 0.1s ease all;
 
