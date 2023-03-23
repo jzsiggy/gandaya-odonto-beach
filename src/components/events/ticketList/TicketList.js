@@ -131,7 +131,7 @@ const TicketList = () => {
 
     const { isLoading: isEventLoading, isError: isEventError, data: event, error: eventError } = useQuery(['event', alias], getEventByAlias, { keepPreviousData: false });
     const { isLoading: isTicketsLoading, isError: isTicketsError, data: tickets, error: ticketsError } = useQuery(['eventTickets', alias], () => getActiveTickets(event.id), {enabled: (!!showTickets) && (!!event), keepPreviousData: false});
-    const { isLoading: isPromoLoading, isError: isPromoError, data: promoTickets, error: promoError } = useQuery(['eventTicketsPromo', alias], () => getPromoTickets(event.id), {enabled: (!!showTickets) && (!!event), keepPreviousData: false});    
+    const { isLoading: isPromoLoading, isError: isPromoError, data: promoTickets, error: promoError } = useQuery(['eventTicketsPromo', alias], () => getPromoTickets(event.id), {enabled: (!!showTickets) && (!!event), keepPreviousData: false, retry: false});    
     const { isLoading: isOrdersLoading, isError: isOrdersError, data: orders, error: ordersError } = useQuery(['eventOrders', alias], () => getEventOrders(event.id), {enabled: (!!showOrders) && (!!event), keepPreviousData: false});
 
     if (isEventLoading || (showTickets && isTicketsLoading) || (showOrders && isOrdersLoading)) {
@@ -192,6 +192,12 @@ const TicketList = () => {
                                 </Wrapper>
                             )
                         })
+                    }
+                    {
+                        (isPromoError || (!!promoTickets && !promoTickets?.length)) && 
+                        <div style={{width: "80%", margin: "10px 0 15px 0", display: "flex", flexDirection: "column", justifyContent: "space-evenly", alignItems: "center"}}>
+                        <span style={{textAlign: "center"}}>Esse código promocional é inválido ou os ingressos liberados por ele já esgotaram.</span>
+                        </div>
                     }
                     { 
                     !tickets?.length && !promoTickets?.length && 
