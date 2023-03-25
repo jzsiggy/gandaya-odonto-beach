@@ -29,10 +29,18 @@ const DonateModal = (props) => {
     const [state, setState] = useState("initial")
     const [percent, setPercent] = useState(0)
 
+    const getRandomNormal = (mean, stdDev) => {
+        let u1 = 1 - Math.random(); // Uniform distribution (0, 1]
+        let u2 = 1 - Math.random(); // Uniform distribution (0, 1]
+        let z = Math.sqrt(-2.0 * Math.log(u1)) * Math.cos(2 * Math.PI * u2); // Normal distribution (0, 1)
+        return mean + stdDev * z; // Adjust mean and standard deviation
+      }
+
     const getPercentage = () => {
-        var precision = 100;
-        let res = Math.floor(Math.random() * (30 * precision - 1 * precision) + 1 * precision) / (1*precision);
-        setPercent(res)
+        let rand = getRandomNormal(60, 15)
+        let res = parseFloat(rand.toFixed(2));
+
+        setPercent(res.toString().replace('.', ','))
     }
 
     useEffect(() => {
@@ -67,9 +75,11 @@ const DonateModal = (props) => {
             <div style={{width: "80%", height: "100%", display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', alignItems: "center"}}>
                 <h3>De acordo com o horóscopo da Odonto Beach, sua chance de dar match na festa é</h3>
                 <Heart>
-                    <h1 style={{paddingTop: "15px"}}>{percent.toFixed(2).replace('.', ',')}%</h1>
+                    <h1 style={{paddingTop: "15px"}}>{percent}%</h1>
                 </Heart>
-                <span>{percent < 20 ? "Quem disse que seria fácil?!" : "Caiu na rede é peixe, ein!"}</span>
+                <span>
+                    {percent < 55 ? "Quem disse que seria fácil?!" : "Caiu na rede é peixe, ein!"}
+                </span>
                 <div onClick={() => { props.onClose(); props.onClick(); }} style={{borderRadius: "5px", border: "1.5px solid #18122B", padding: "5px 20px", fontWeight: "bold"}}> Continuar </div>
             </div>
             }
